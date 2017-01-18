@@ -1,0 +1,56 @@
+input[type="checkbox"] {
+    font-size: 60px;
+}
+
+label {
+    margin-left: 5px;
+    font-style: normal;
+}
+
+#mybutton {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+
+#container {
+    margin: 0 0 10px 0;
+    min-height: 158.4px;
+    width: 100%;
+}
+
+.block {
+    display: inline-block;
+    width: 235px;
+    height: 155px;
+    float: left;
+}
+
+#jobs {
+    font-size: 14px;
+    display: inline-block;
+    width: 350px;
+    height: auto;
+}
+
+#BCOM {
+    background-color: #FFFF00;
+}
+
+#CAMD {
+    background-color: #FF00FF;
+}
+
+#PSG {
+    background-color: #FF9132;
+}
+
+#EST {
+    background-color: #00FF00;
+}
+
+#ECYD {
+    background-color: #00FFFF;
+}

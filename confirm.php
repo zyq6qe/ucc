@@ -1,4 +1,6 @@
 <?php
+include "base.php";
+
 $dict = array(
     "ACCT" => ["BCOM"],
     "FIN" => ["BCOM"],
@@ -30,24 +32,81 @@ $dict = array(
     "DESIGN" => ["CAMD"]
 );
 
-$input = array();
+$abbrev = array(
+    "ACCT" => "Accounting",
+    "FIN" => "Finance",
+    "MARKADV" => "Marketing & Advertising",
+    "CONS" => "Consulting",
+    "SALES" => "Sales",
+    "DA" => "Data Analytics",
+    "BUSO" => "Business - Other",
+    "ENG" => "General Engineering",
+    "BIOMED" => "Biomedical Engineering",
+    "CHEME" => "Chemical Engineering",
+    "CSCPE" => "Computer Science & Computer Engineering",
+    "CIVILENV" => "Civil & Environmental Engineering",
+    "MECHAERO" => "Mechanical & Aerospace Engineering",
+    "EE" => "Electrical Engineering",
+    "SYS" => "Systems Engineering",
+    "MSE" => "Material Science & Engineering",
+    "SCI" => "Science",
+    "TECH" => "Technology",
+    "NSA" => "National Security & Intelligence",
+    "COMMSERV" => "Community & Social Services",
+    "PSGO" => "Public Service & Government - other",
+    "POLI" => "Policy Research",
+    "EDU" => "Education K-12",
+    "COUNS" => "Counseling",
+    "YOUTH" => "Youth Development",
+    "ARTS" => "Performing Arts",
+    "MEDIA" => "Media (Journalism, writing, broadcasting, film)",
+    "DESIGN" => "Design"
+);
 
-if (!empty($_POST['check_list'])) {
-    foreach ($_POST['check_list'] as $check) {
-        foreach ($dict[$check] as $cat) {
-            echo $cat; ?>
-            <br/>
-            <?php
-            if (!in_array($cat, $input)) {
-                $input[] = $cat;
+$input = array(); //will hold list of func comms
+$comm_list = array(); //will hold dictionary of comms to specific job area that was checked
+
+if (!empty($_POST['check_list'])) { //form was posted
+    foreach ($_POST['check_list'] as $check) { //for each checkbox that was checked checked
+        foreach ($dict[$check] as $cat) { //reference dictionary to find associated func community
+            if (!in_array($cat, $input)) { //if func community not in final input set
+                //prevent duplicate func comms in input
+                $input[] = $cat; //append to input arr
+            }
+            if (!isset($comm_list[$cat])) { //check if func community is not already a key in comm_list dict
+                //add cat to comm_list and create new array of job areas associated to that category
+                $comm_list[$cat] = [$check];
+            } else {
+                //else add job area to existing array assoc with that cat
+                array_push($comm_list[$cat], $check);
             }
         }
     }
 }
+
+sort($input);
 ?>
-    <br/><br/>
+
+<!------------BEGIN RENDERING------------>
 <?php
-print_r($input);
+foreach ($input as $i) { //for each func comm that was selected?>
+    <div id="container">
+        <!--render color block-->
+        <div class="block" id="<?php echo $i ?>"></div>
+        <!--render list of jobs-->
+        <div id="jobs">
+            <ul>
+            <?php
+            foreach ($comm_list[$i] as $job) { //for each job selected assoc with that func comm
+                echo "<li>".$abbrev[$job]."</li>";
+            }
+            ?>
+            </ul>
+        </div>
+    </div>
+<?php }
+
+//header("refresh:15; url=index.php");
 
 //ACCT
 //FIN
