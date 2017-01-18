@@ -8,7 +8,6 @@ $dict = array(
     "CONS" => ["BCOM"],
     "SALES" => ["BCOM"],
     "DA" => ["BCOM", "EST"],
-    "BUSO" => ["BCOM"],
     "ENG" => ["EST"],
     "BIOMED" => ["EST"],
     "CHEME" => ["EST"],
@@ -22,14 +21,16 @@ $dict = array(
     "TECH" => ["EST"],
     "NSA" => ["PSG"],
     "COMMSERV" => ["PSG"],
-    "PSGO" => ["PSG"],
     "POLI" => ["PSG"],
     "EDU" => ["ECYD"],
     "COUNS" => ["ECYD"],
     "YOUTH" => ["ECYD"],
     "ARTS" => ["CAMD"],
     "MEDIA" => ["CAMD"],
-    "DESIGN" => ["CAMD"]
+    "DESIGN" => ["CAMD"],
+    "HADMIN" => ["HEALTH"],
+    "HCONS" => ["HEALTH"],
+    "HTECH" => ["HEALTH"]
 );
 
 $abbrev = array(
@@ -39,7 +40,6 @@ $abbrev = array(
     "CONS" => "Consulting",
     "SALES" => "Sales",
     "DA" => "Data Analytics",
-    "BUSO" => "Business - Other",
     "ENG" => "General Engineering",
     "BIOMED" => "Biomedical Engineering",
     "CHEME" => "Chemical Engineering",
@@ -53,14 +53,16 @@ $abbrev = array(
     "TECH" => "Technology",
     "NSA" => "National Security & Intelligence",
     "COMMSERV" => "Community & Social Services",
-    "PSGO" => "Public Service & Government - other",
     "POLI" => "Policy Research",
     "EDU" => "Education K-12",
     "COUNS" => "Counseling",
     "YOUTH" => "Youth Development",
     "ARTS" => "Performing Arts",
     "MEDIA" => "Media (Journalism, writing, broadcasting, film)",
-    "DESIGN" => "Design"
+    "DESIGN" => "Design",
+    "HADMIN" => "Healthcare Admin",
+    "HCONS" => "Healthcare Consulting",
+    "HTECH" => "Healthcare Tech"
 );
 
 $input = array(); //will hold list of func comms
@@ -88,6 +90,7 @@ sort($input);
 ?>
 
 <!------------BEGIN RENDERING------------>
+<h1><?php echo $_POST['NAME'] ?></h1>
 <?php
 foreach ($input as $i) { //for each func comm that was selected?>
     <div id="container">
@@ -106,7 +109,7 @@ foreach ($input as $i) { //for each func comm that was selected?>
     </div>
 <?php }
 
-//header("refresh:15; url=index.php");
+header("refresh:10; url=index.php");
 
 //ACCT
 //FIN

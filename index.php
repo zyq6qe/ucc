@@ -5,8 +5,14 @@ include "base.php";
 <div class="container">
     <br/>
     <h1>Register</h1>
-    <br/>
     <form action="confirm.php" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Company Name:</label>
+                <input type="text" class="form-control" name="NAME" id="NAME" required>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-md-6">
                 <input type="checkbox" name="check_list[]" value="ACCT">
@@ -26,9 +32,6 @@ include "base.php";
 
                 <br/><input type="checkbox" name="check_list[]" value="DA">
                 <label>Data Analytics</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="BUSO">
-                <label>Business - Other</label>
 
                 <br/><input type="checkbox" name="check_list[]" value="ENG">
                 <label>General Engineering</label>
@@ -53,11 +56,11 @@ include "base.php";
 
                 <br/><input type="checkbox" name="check_list[]" value="SYS">
                 <label>Systems Engineering</label>
-            </div>
-            <div class="col-md-6">
+
                 <br/><input type="checkbox" name="check_list[]" value="MSE">
                 <label>Material Science & Engineering</label>
-
+            </div>
+            <div class="col-md-6">
                 <br/><input type="checkbox" name="check_list[]" value="SCI">
                 <label>Science</label>
 
@@ -69,9 +72,6 @@ include "base.php";
 
                 <br/><input type="checkbox" name="check_list[]" value="COMMSERV">
                 <label>Community & Social Services</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="PSGO">
-                <label>Public Service & Government - other</label>
 
                 <br/><input type="checkbox" name="check_list[]" value="POLI">
                 <label>Policy Research</label>
@@ -93,6 +93,15 @@ include "base.php";
 
                 <br/><input type="checkbox" name="check_list[]" value="DESIGN">
                 <label>Design</label>
+
+                <br/><input type="checkbox" name="check_list[]" value="HADMIN">
+                <label>Healthcare Admin</label>
+
+                <br/><input type="checkbox" name="check_list[]" value="HCONS">
+                <label>Healthcare Consulting</label>
+
+                <br/><input type="checkbox" name="check_list[]" value="HTECH">
+                <label>Healthcare Tech</label>
             </div>
         </div>
         <br/><input class="btn btn-success" id="mybutton" type="submit"/>

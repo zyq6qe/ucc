@@ -17,14 +17,14 @@ label {
 
 #container {
     margin: 0 0 10px 0;
-    min-height: 158.4px;
+    min-height: 100px;
     width: 100%;
 }
 
 .block {
     display: inline-block;
-    width: 235px;
-    height: 155px;
+    width: 375px;
+    height: 100px;
     float: left;
 }
 
@@ -53,4 +53,8 @@ label {
 
 #ECYD {
     background-color: #00FFFF;
+}
+
+#HEALTH {
+    background-color: #C00000;
 }
