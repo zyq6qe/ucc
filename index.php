@@ -77,22 +77,10 @@ include "base.php";
                 <label>Policy Research</label>
 
                 <br/><input type="checkbox" name="check_list[]" value="EDU">
-                <label>Education K-12</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="COUNS">
-                <label>Counseling</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="YOUTH">
-                <label>Youth Development</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="ARTS">
-                <label>Performing Arts</label>
+                <label>Education, Counseling and Youth Development</label>
 
                 <br/><input type="checkbox" name="check_list[]" value="MEDIA">
                 <label>Media (Journalism, writing, broadcasting, film)</label>
-
-                <br/><input type="checkbox" name="check_list[]" value="DESIGN">
-                <label>Design</label>
 
                 <br/><input type="checkbox" name="check_list[]" value="HADMIN">
                 <label>Healthcare Admin</label>
